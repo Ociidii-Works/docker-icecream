@@ -2,23 +2,23 @@
 Dockerized images of icecream distributed compiler with their docker-compose files
 
 ## Usage
-### Daemon ([adambh/docker-iceccd](https://hub.docker.com/r/adambh/docker-iceccd))
+### Daemon ([xenhat/icecream](https://hub.docker.com/r/xenhat/icecream))
 The daemon images is based on Clearlinux so as to enjoy performance out of the optimized distribution
 ```
-docker run --net=host -p ::10245 -p ::8766 -p ::8765 adambh/docker-iceccd
+docker run --net=host -p ::10245 -p ::8766 -p ::8765 xenhat/icecream
 ```
 
-### Scheduler ([adambh/docker-icecc-scheduler](https://hub.docker.com/r/adambh/docker-icecc-scheduler))
+### Scheduler ([xenhat/icecream-scheduler](https://hub.docker.com/r/xenhat/icecream-scheduler))
 There are 2 flavors of this image, in Clearlinux and in Alpine, the former favors performance and the latter size.
 
 #### - Clearlinux
 ```
-docker run --net=host -p ::8765 adambh/docker-icecc-scheduler:latest
+docker run --net=host -p ::8765 xenhat/icecream-scheduler:latest
 ```
 
 #### - Alpine
 ```
-docker run --net=host -p ::8765 adambh/docker-icecc-scheduler:alpine
+docker run --net=host -p ::8765 xenhat/icecream-scheduler:alpine
 ```
 
 ## Troubleshooting
@@ -28,7 +28,7 @@ This is a known [limitation](https://docs.docker.com/docker-for-windows/networki
 **Note**: Replace 192.168.1.12 with your scheduler's IP address.
 
 ```
-docker run --net=host -p ::10245 -p ::8766 -p ::8765 -e USE_SCHEDULER=192.168.1.12 adambh/docker-iceccd
+docker run --net=host -p ::10245 -p ::8766 -p ::8765 -e USE_SCHEDULER=192.168.1.12 xenhat/icecream
 ```
 
 or by appending environment variable to **docker-compose.yml**:
@@ -43,3 +43,5 @@ Yeah well, the prior workaround was half of the solution, it is rather better to
 
 You can check the docker-compose.ovpn.yml examples for both the scheduler and daemon.
  
+ Credits:
+ Based on https://github.com/GTANAdam/docker-icecream
