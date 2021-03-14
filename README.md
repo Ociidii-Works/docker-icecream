@@ -42,3 +42,4 @@ environment:
 Yeah well, the prior workaround was half of the solution, it is rather better to create a VPN between the scheduler and the daemon then bridge it to the same docker network.
 
 You can check the docker-compose.ovpn.yml examples for both the scheduler and daemon.
+ 
