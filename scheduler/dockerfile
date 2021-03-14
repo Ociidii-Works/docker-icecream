@@ -2,7 +2,7 @@ FROM clearlinux:latest
 RUN swupd bundle-add icecream
 
 # Run icecc daemon in verbose mode
-ENTRYPOINT ["icecc-scheduler", "--port", "8765", "-vvv", "--netname", "central-icecc-scheduler"]
+ENTRYPOINT ["icecc-scheduler", "--port", "8765", "-vvv", "--netname", "ICECREAM"]
 
 # icecc-scheduler port
 EXPOSE 8765
