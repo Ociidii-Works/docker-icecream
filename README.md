@@ -22,6 +22,11 @@ docker run --net=host -p ::8765 xenhat/icecream-scheduler:alpine
 ```
 
 ## Troubleshooting
+
+### I finished setting it up and my other machine doesn't use the build nodes
+
+Make sure you have the *native* daemon running on the machine you're starting the compilation with. It will then connect to the other containers.
+
 ### Scheduler is not automatically reachable when running a daemon on Windows:
 This is a known [limitation](https://docs.docker.com/docker-for-windows/networking/#known-limitations-use-cases-and-workarounds) of Docker on Windows, but this can be workedaround by manually setting the IP Address of the scheduler via environment variables, for example:
 
